@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- Main menu -->
+        <menuitem id="rls_main_menu"
+                  name="RLS"
+                  web_icon="rls,static/description/icon.png"
+                  sequence="5"
+        />
+
+    </data>
+</odoo>

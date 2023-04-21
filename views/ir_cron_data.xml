@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record id="update_days_remaining_cron" model="ir.cron">
+            <field name="name">RLS: Update Days Remaining</field>
+            <field name="model_id" ref="model_request_legal_services"/>
+            <field name="state">code</field>
+            <field name="code">model._compute_days_remaining()</field>
+            <field name="user_id" ref="base.user_admin"/>
+            <field name="interval_number">1</field>
+            <field name="interval_type">days</field>
+            <field name="numbercall">-1</field>
+            <field name="nextcall" eval="(DateTime.now() + timedelta(days=1)).replace(hour=0, minute=0, second=0)"/>
+            <field name="priority" eval="1"/>
+            <field name="active" eval="True"/>
+        </record>
+    </data>
+</odoo>

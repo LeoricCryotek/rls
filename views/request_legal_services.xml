@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <record id="view_request_legal_services_form" model="ir.ui.view">
+        <field name="name">request.legal.services.form</field>
+        <field name="model">request.legal.services</field>
+        <field name="arch" type="xml">
+            <form string="Request Legal Services">
+                <sheet>
+                    <widget name="web_ribbon" title="Archived" bg_color="bg-danger" attrs="{'invisible': [('active', '=', True)]}"/>
+                    <group col="1">
+                        <group>
+                            <field name="name"/>
+                            <field name="nature_of_request"/>
+                            <field name="assigned_attorney_id"/>
+                            <field name="due_date" widget="date"/>
+                        </group>
+                        <field name="active" invisible="1"/>
+                    </group>
+                    <group col="2">
+                        <group>
+                            <field name="days_remaining"/>
+                        </group>
+                    </group>
+                    <group>
+                        <field name="note" widget="html"/>
+                    </group>
+                </sheet>
+                <!-- Chatter -->
+                <div class="oe_chatter">
+                    <field name="message_follower_ids" groups="base.group_user"/>
+                    <field name="message_ids"/>
+                </div>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_request_legal_services_tree" model="ir.ui.view">
+        <field name="name">request.legal.services.tree</field>
+        <field name="model">request.legal.services</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="nature_of_request"/>
+                <field name="assigned_attorney_id"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_request_legal_services_search" model="ir.ui.view">
+        <field name="name">request.legal.services.search</field>
+        <field name="model">request.legal.services</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="name"/>
+                <filter string="Archived" name="inactive" domain="[('active', '=', False)]"/>
+            </search>
+        </field>
+    </record>
+
+
+    <record id="view_request_legal_services_events" model="ir.ui.view">
+        <field name="name">request.legal.services.event</field>
+        <field name="model">request.legal.services</field>
+        <field name="arch" type="xml">
+            <calendar string="My Events" date_start="start_datetime" date_stop="due_date" mode="month">
+                <field name="name"/>
+                <field name="nature_of_request"/>
+                <field name="assigned_attorney_id"/>
+                <field name="due_date"/>
+                <field name="start_datetime"/>
+            </calendar>
+    </field>
+</record>
+
+        </odoo>

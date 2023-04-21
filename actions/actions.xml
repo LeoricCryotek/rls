@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- Action to open RLS Dashboard -->
+        <record id="rls_dashboard_action" model="ir.actions.act_window">
+            <field name="name">RLS Dashboard</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">request.legal.services.dashboard</field>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="rls_dashboard_form_view"/>
+            <field name="target">current</field>
+            <field name="res_id">1</field>
+        </record>
+
+
+
+        <!-- Dashboard menu -->
+        <menuitem id="rls_dashboard_menu"
+                  name="Dashboard"
+                  action="rls_dashboard_action"
+                  parent="rls_main_menu"
+                  sequence="1"
+        />
+
+        <!-- Request menu -->
+        <record id="action_rls_request" model="ir.actions.act_window">
+            <field name="name">RLS Request</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">request.legal.services</field>
+            <field name="view_mode">kanban,tree,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    Click the Create button to add a new request.
+                </p>
+            </field>
+        </record>
+        <!-- Requests menu -->
+        <menuitem id="rls_requests_menu"
+                  name="Requests"
+                  action="action_rls_request"
+                  parent="rls_main_menu"
+                  sequence="2"
+        />
+    </data>
+</odoo>

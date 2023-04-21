@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="website_form_block_rls" model="ir.ui.view">
+        <field name="name">website.form.block.rls</field>
+        <field name="model">website.form.block</field>
+        <field name="arch" type="xml">
+            <form>
+                <field name="name"/>
+                <field name="email"/>
+                <field name="phone"/>
+                <field name="rls_id"/>
+                <button type="object" name="submit_form" string="Submit"/>
+            </form>
+        </field>
+    </record>
+
+    <record id="website_form_action_rls" model="ir.actions.act_window">
+        <field name="name">Website Form RLS</field>
+        <field name="res_model">request.legal.services</field>
+        <field name="view_mode">form</field>
+        <field name="context">{'default_rls_id': rls_ids and rls_ids[0]}</field>
+        <field name="target">inline</field>
+    </record>
+</odoo>

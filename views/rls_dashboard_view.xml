@@ -1,0 +1,54 @@
+<odoo>
+    <data>
+        <!-- Dashboard form view -->
+        <record id="rls_dashboard_form_view" model="ir.ui.view">
+            <field name="name">rls.dashboard.form.view</field>
+            <field name="model">request.legal.services.dashboard</field>
+            <field name="arch" type="xml">
+                <form string="RLS Dashboard">
+                    <sheet>
+                        <div class="o_form_view o_form_editable">
+                            <field name="total_requests" invisible="1"/>
+                            <field name="open_requests" invisible="1"/>
+                            <field name="weekly_requests" invisible="1"/>
+                            <div class="container">
+                                <div class="row mt-4">
+                                    <div class="col-4">
+                                        <div class="card">
+                                            <div class="card-body">
+                                                <h5 class="card-title text-center">Total Requests</h5>
+                                                <p class="card-text">
+                                                    <i class="fas fa-clipboard-list" title="Total Requests"/>
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-4">
+                                        <div class="card">
+                                            <div class="card-body">
+                                                <h5 class="card-title text-center">Open Requests</h5>
+                                                <p class="card-text">
+                                                    <i class="fas fa-clipboard-list" title="Open Requests"/>
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-4">
+                                        <div class="card">
+                                            <div class="card-body">
+                                                <h5 class="card-title text-center">Weekly Requests</h5>
+                                                <p class="card-text">
+                                                   <i class="fas fa-clipboard-list" title="Weekly Requests"/>
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+    </data>
+</odoo>

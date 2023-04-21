@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+  <data>
+
+    <!-- Define the form view for the RLS model -->
+    <record id="view_rls_form" model="ir.ui.view">
+      <field name="name">rls.form</field>
+      <field name="model">request.legal.services</field>
+      <field name="arch" type="xml">
+        <form string="Request Legal Services">
+          <group>
+            <field name="name"/>
+            <field name="description"/>
+            <field name="active"/>
+          </group>
+        </form>
+      </field>
+    </record>
+
+    <!-- Define the tree view for the RLS model -->
+    <record id="view_rls_tree" model="ir.ui.view">
+      <field name="name">rls.tree</field>
+      <field name="model">request.legal.services</field>
+      <field name="arch" type="xml">
+        <tree string="Request Legal Services">
+          <field name="name"/>
+          <field name="description"/>
+          <field name="active"/>
+        </tree>
+      </field>
+    </record>
+
+  </data>
+</odoo>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <template id="assets_backend" name="dashboard assets" inherit_id="web.assets_backend">
+        <xpath expr="." position="inside">
+            <!-- Commented out the line importing the JavaScript file
+            <script type="text/javascript" src="/your_module/static/src/js/dashboard.js"/>
+            -->
+        </xpath>
+    </template>
+</odoo>

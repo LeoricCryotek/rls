@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- Open Requests search filter -->
+        <record id="search_filter_open" model="ir.ui.view">
+            <field name="name">request.legal.services.search.open</field>
+            <field name="model">request.legal.services</field>
+            <field name="inherit_id" ref="base.view_search"/>
+            <field name="arch" type="xml">
+                <search>
+                    <filter name="open" string="Open Requests" domain="[('state', '=', 'open')]"/>
+                    <filter name="this_week" string="This Week" domain="[('create_date', '>=', context_today().strftime('%Y-%m-%d'))]"/>
+                </search>
+            </field>
+        </record>
+    </data>
+</odoo>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <record id="stage_new" model="rls.request.stage">
+            <field name="name">New</field>
+            <field name="sequence">1</field>
+        </record>
+        <record id="stage_in_progress" model="rls.request.stage">
+            <field name="name">Open</field>
+            <field name="sequence">2</field>
+        </record>
+        <record id="stage_done" model="rls.request.stage">
+            <field name="name">Closed</field>
+            <field name="sequence">3</field>
+        </record>
+    </data>
+</odoo>
